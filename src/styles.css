@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+}
+
+.App {
+  background-color: rgb(255, 234, 237);
+  height: 100%;
+  padding-bottom: 50px;
+}
+
+.app_header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: white;
+  object-fit: contain;
+  padding: 20px;
+  border-bottom: 1px solid lightgrey;
+  height: 20px;
+}
+
+.app_headerImage {
+  max-width: 100px;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.app_title {
+  margin: 20px;
+}
+
+.app_username {
+  font-style: italic;
+}
