@@ -21,6 +21,13 @@ npm install
 npm start
 ```
 
+View locallly on 
+
+```bash
+http://localhost:3000
+```
+
+
 ## Resources
 
 [Video Tutorial](youtube.com/watch?v=f7T48W0cwXM&t=9393s)
