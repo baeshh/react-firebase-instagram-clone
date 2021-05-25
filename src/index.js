@@ -12,5 +12,3 @@ ReactDOM.render(
   </StrictMode>,
   rootElement
 );
-
-r;
