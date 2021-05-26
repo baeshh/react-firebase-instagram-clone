@@ -2,7 +2,7 @@
   "name": "react-firebase-instagram-clone",
   "homepage": "http://liuba-larousse.github.io/react-firebase-instagram-clone/",
   "version": "1.0.0",
-  "description": "",
+  "description": "Learning React project , allows for user to log in and upload the image of their pet with the caption of an imane",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
