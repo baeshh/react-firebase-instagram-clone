@@ -52,38 +52,31 @@ export default function App() {
       <div className='app_header'>
         <img
           className='app_headerImage'
-          src='https://firebasestorage.googleapis.com/v0/b/instagram-clone-app-ebf8a.appspot.com/o/logo%2Fpupplogo.png?alt=media&token=f4a7d9d7-acd7-4f09-8280-3011e68458aa'
+          src='https://firebasestorage.googleapis.com/v0/b/instagram-clone-app-ebf8a.appspot.com/o/logo%2Finstalogo.png?alt=media&token=7f38c3b4-6a80-4088-8c27-87779ddd2bbb'
           alt='instagram logo'
         />
+        {username ? (
+          <div className='app_username'>
+            Hello 👋 {username}
+          </div>
+        ) : null}
         <div className='app_login'>
           <Modal />
         </div>
       </div>
       <div className='app_body'>
-        <Typography
-          color='secondary'
-          variant='h4'
-          align='center'
-          gutterBottom
-        >
-          Welcome to PuppyGram{' '}
-          <strong className='app_username'>
-            {username}
-          </strong>
-        </Typography>
         {username ? (
           <Upload username={username} />
         ) : (
           <div className='app_loginRequest'>
             <Typography
-              color='secondary'
+              color='primary'
               variant='p'
               component='p'
               align='center'
               gutterBottom
             >
-              Please to log in to upload your puppy images
-              🐶 🐾
+              Please to log in to post a photo
             </Typography>
           </div>
         )}

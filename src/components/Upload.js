@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Input,
   Button,
@@ -10,7 +10,7 @@ import {
 import { PhotoCamera } from '@material-ui/icons';
 
 import { makeStyles } from '@material-ui/core/styles';
-import { storage, db } from './../firebase';
+import { storage, db } from '../firebase';
 import firebase from '@firebase/app';
 
 const useStyles = makeStyles((theme) => ({
@@ -20,16 +20,21 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(3),
     width: '450px',
     display: 'flex',
-    flexDirection: 'column',
+    flexDirection: 'row',
     margin: '0 auto',
+  },
+  uploadWrap: {
+    flexDirection: 'column',
     alignItems: 'center',
+    justifyContent: 'center',
+    marginLeft: theme.spacing(2),
   },
   progress: {
-    width: 120,
+    width: 180,
     marginLeft: theme.spacing(2),
   },
   input: {
-    width: '50%',
+    width: '100%',
   },
   button: {
     margin: theme.spacing(1),
@@ -68,13 +73,16 @@ export default function Upload({ username }) {
   const [image, setImage] = useState('');
   const [url, setUrl] = useState('');
   const [progress, setProgress] = useState(0);
-  const [imagePreview, setImagePreview] = useState(null);
+  const [imagePreview, setImagePreview] = useState();
+
+  useEffect(() => {
+    setImagePreview(imagePreview);
+  }, [imagePreview]);
 
   function handlePreview(image) {
     storage.ref(`image_previews/${image.name}`).put(image);
-
     storage
-      .ref('images')
+      .ref('image_previews')
       .child(image.name)
       .getDownloadURL()
       .then((url) => setImagePreview(url));
@@ -130,6 +138,7 @@ export default function Upload({ username }) {
         setProgress(0);
         setCaption('');
         setImage(null);
+        setImagePreview(null);
       }
     );
   }
@@ -144,56 +153,59 @@ export default function Upload({ username }) {
             className={classes.image}
           />
         </div>
-        <input
-          type='file'
-          onChange={handleChange}
-          className={classes.input}
-          style={{ display: 'none' }}
-          id='raised-button-file'
-        />
-        <label htmlFor='raised-button-file'>
-          <span>Add an image here 👉</span>
-          <IconButton
-            variant='raised'
-            component='span'
-            className={classes.button}
-            color='secondary'
-          >
-            <PhotoCamera className={classes.icon} />
-          </IconButton>
-        </label>
-        <Input
-          type='text'
-          placeholder='enter a caption'
-          value={caption}
-          onChange={(e) => setCaption(e.target.value)}
-          className={classes.input}
-          color='secondary'
-        />
-        <div className={classes.upload}>
-          {image === null || image === '' ? (
-            <Button
-              variant='outlined'
-              onClick={handleUpload}
-              disabled
-            >
-              upload
-            </Button>
-          ) : (
-            <Button
-              variant='outlined'
-              onClick={handleUpload}
-              className={classes.uploadButton}
-            >
-              upload
-            </Button>
-          )}
-          <LinearProgress
-            variant='determinate'
-            color='secondary'
-            value={progress}
-            className={classes.progress}
+        <div className={classes.uploadWrap}>
+          <input
+            type='file'
+            onChange={handleChange}
+            className={classes.input}
+            style={{ display: 'none' }}
+            id='raised-button-file'
           />
+          <label htmlFor='raised-button-file'>
+            <span>Add an image here 👉</span>
+            <IconButton
+              variant='raised'
+              component='span'
+              className={classes.button}
+              color='primary'
+            >
+              <PhotoCamera className={classes.icon} />
+            </IconButton>
+          </label>
+          <Input
+            type='text'
+            placeholder='enter a caption'
+            value={caption}
+            onChange={(e) => setCaption(e.target.value)}
+            className={classes.input}
+            color='primary'
+          />
+          <div className={classes.upload}>
+            {image === null || image === '' ? (
+              <Button
+                variant='contained'
+                color='primary'
+                onClick={handleUpload}
+                disabled
+              >
+                upload
+              </Button>
+            ) : (
+              <Button
+                variant='contained'
+                color='primary'
+                onClick={handleUpload}
+              >
+                upload
+              </Button>
+            )}
+            <LinearProgress
+              variant='determinate'
+              color='primary'
+              value={progress}
+              className={classes.progress}
+            />
+          </div>
         </div>
       </div>
     </>

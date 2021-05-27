@@ -9,7 +9,7 @@ import {
   FormControl,
   InputLabel,
 } from '@material-ui/core';
-import { auth } from './../firebase';
+import { auth } from '../firebase';
 
 function getModalStyle() {
   const top = 50;
@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: 10,
   },
   img: {
-    maxWidth: 150,
+    maxWidth: 100,
   },
   login: {
     dispaly: 'flex',
@@ -132,7 +132,7 @@ export default function SimpleModal() {
     <div style={modalStyle} className={classes.paper}>
       <img
         className={classes.img}
-        src='https://firebasestorage.googleapis.com/v0/b/instagram-clone-app-ebf8a.appspot.com/o/logo%2Fpupplogo.png?alt=media&token=f4a7d9d7-acd7-4f09-8280-3011e68458aa'
+        src='https://firebasestorage.googleapis.com/v0/b/instagram-clone-app-ebf8a.appspot.com/o/logo%2Finstalogo.png?alt=media&token=7f38c3b4-6a80-4088-8c27-87779ddd2bbb'
         alt='instagram logo'
       />
       <form
@@ -179,7 +179,7 @@ export default function SimpleModal() {
           <Button
             className={classes.button}
             variant='outlined'
-            color='secondary'
+            color='primary'
             onClick={signup}
           >
             Sign up
@@ -187,7 +187,7 @@ export default function SimpleModal() {
           <Button
             className={classes.button}
             variant='outlined'
-            color='secondary'
+            color='primary'
             onClick={() => setOpen(false)}
           >
             Close
@@ -201,7 +201,7 @@ export default function SimpleModal() {
     <div style={modalStyle} className={classes.paper}>
       <img
         className={classes.img}
-        src='https://firebasestorage.googleapis.com/v0/b/instagram-clone-app-ebf8a.appspot.com/o/logo%2Fpupplogo.png?alt=media&token=f4a7d9d7-acd7-4f09-8280-3011e68458aa'
+        src='https://firebasestorage.googleapis.com/v0/b/instagram-clone-app-ebf8a.appspot.com/o/logo%2Finstalogo.png?alt=media&token=7f38c3b4-6a80-4088-8c27-87779ddd2bbb'
         alt='instagram logo'
       />
       <form
@@ -237,7 +237,7 @@ export default function SimpleModal() {
           <Button
             className={classes.button}
             variant='contained'
-            color='secondary'
+            color='primary'
             onClick={demoSignin}
           >
             Demo Sign in
@@ -245,7 +245,7 @@ export default function SimpleModal() {
           <Button
             className={classes.button}
             variant='outlined'
-            color='secondary'
+            color='primary'
             onClick={signin}
           >
             Sign in
@@ -253,7 +253,7 @@ export default function SimpleModal() {
           <Button
             className={classes.button}
             variant='outlined'
-            color='secondary'
+            color='primary'
             onClick={() => setOpenSignin(false)}
           >
             Close
@@ -268,7 +268,7 @@ export default function SimpleModal() {
       {user ? (
         <Button
           variant='contained'
-          color='secondary'
+          color='primary'
           onClick={signout}
         >
           Sign out
@@ -278,14 +278,14 @@ export default function SimpleModal() {
           <Button
             className={classes.logbutton}
             variant='contained'
-            color='secondary'
+            color='primary'
             onClick={() => setOpenSignin(true)}
           >
             Log in
           </Button>
           <Button
             variant='contained'
-            color='secondary'
+            color='primary'
             onClick={handleOpen}
           >
             Sign Up
