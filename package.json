@@ -1,6 +1,6 @@
 {
   "name": "react-firebase-instagram-clone",
-  "homepage": "http://liuba-larousse.github.io/react-firebase-instagram-clone/",
+  "homepage": ".",
   "version": "1.0.0",
   "description": "Learning React project , allows for user to log in and upload the image of their pet with the caption of an imane",
   "keywords": [],
@@ -26,9 +26,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
+   
   },
   "browserslist": [
     ">0.2%",
