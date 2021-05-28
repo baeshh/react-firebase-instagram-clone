@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {
   Modal,
@@ -9,7 +9,8 @@ import {
   FormControl,
   InputLabel,
 } from '@material-ui/core';
-import { auth } from '../firebase';
+import { AuthContext } from '../Firebase/context';
+// import { auth } from '../Firebase/firebase';
 
 function getModalStyle() {
   const top = 50;
@@ -59,74 +60,90 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SimpleModal() {
   const classes = useStyles();
-  const [modalStyle] = useState(getModalStyle);
-  const [open, setOpen] = useState(false);
 
+  const [modalStyle] = useState(getModalStyle);
+
+  //context
+  const {
+    setPassword,
+    setEmail,
+    setUserame,
+    username,
+    email,
+    password,
+    signup,
+    demoSignin,
+    signin,
+    signout,
+    user,
+  } = useContext(AuthContext);
+
+  //signup functionality
+  const [openSignin, setOpenSignin] = useState(false);
+  const [open, setOpen] = useState(false);
   //modal open/close
   const handleOpen = () => {
     setOpen(true);
   };
 
-  //signup functionality
-  const [openSignin, setOpenSignin] = useState(false);
-  const [username, setUserame] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [user, setUser] = useState(null);
+  // const [username, setUserame] = useState('');
+  // const [email, setEmail] = useState('');
+  // const [password, setPassword] = useState('');
+  // const [user, setUser] = useState(null);
 
-  useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged(
-      (authUser) => {
-        if (authUser) {
-          //user has loged in
-          console.log('user:', authUser);
-          setUser(authUser);
-        } else {
-          //user has loged out
-          setUser(null);
-        }
-      }
-    );
+  // useEffect(() => {
+  //   const unsubscribe = auth.onAuthStateChanged(
+  //     (authUser) => {
+  //       if (authUser) {
+  //         //user has loged in
+  //         console.log('user:', authUser);
+  //         setUser(authUser);
+  //       } else {
+  //         //user has loged out
+  //         setUser(null);
+  //       }
+  //     }
+  //   );
 
-    return () => {
-      //perform cleanup before refire useeffect
-      unsubscribe();
-    };
-  }, [user, username]);
+  //   return () => {
+  //     //perform cleanup before refire useeffect
+  //     unsubscribe();
+  //   };
+  // }, [user, username]);
 
-  const signup = (e) => {
-    auth
-      .createUserWithEmailAndPassword(email, password)
-      .then((authUser) => {
-        return authUser.user.updateProfile({
-          displayName: username,
-        });
-      })
-      .catch((error) => alert(error.message));
-  };
+  // const signup = (e) => {
+  //   auth
+  //     .createUserWithEmailAndPassword(email, password)
+  //     .then((authUser) => {
+  //       return authUser.user.updateProfile({
+  //         displayName: username,
+  //       });
+  //     })
+  //     .catch((error) => alert(error.message));
+  // };
 
-  const signout = (e) => {
-    auth.signOut();
-  };
+  // const signout = (e) => {
+  //   auth.signOut();
+  // };
 
-  const signin = (e) => {
-    auth
-      .signInWithEmailAndPassword(email, password)
-      .catch((error) => alert(error.message));
+  // const signin = (e) => {
+  //   auth
+  //     .signInWithEmailAndPassword(email, password)
+  //     .catch((error) => alert(error.message));
 
-    setOpenSignin(false);
-  };
+  //   setOpenSignin(false);
+  // };
 
-  const demoSignin = (e) => {
-    auth
-      .signInWithEmailAndPassword(
-        'demosignup@gmail.com',
-        'abc123'
-      )
-      .catch((error) => alert(error.message));
+  // const demoSignin = (e) => {
+  //   auth
+  //     .signInWithEmailAndPassword(
+  //       'demosignup@gmail.com',
+  //       'abc123'
+  //     )
+  //     .catch((error) => alert(error.message));
 
-    setOpenSignin(false);
-  };
+  //   setOpenSignin(false);
+  // };
 
   const body = (
     <div style={modalStyle} className={classes.paper}>
@@ -137,7 +154,7 @@ export default function SimpleModal() {
       />
       <form
         className={classes.form}
-        onSubmit={(e) => e.preventDefault() && false}
+        onSubmit={(e) => e.preventDefault()}
       >
         <FormControl margin='normal' required fullWidth>
           <InputLabel htmlFor='name'>Name</InputLabel>

@@ -7,12 +7,11 @@ https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f
 
 ## Deploying to Web
 
-### Gitgub pages
-
 ### Netlify
 
-1. create netlify.toml file
-2. add following script
+I faced a challange deploying code on Netlify. LOgs would run fine and site would get published. But as I go through the link on the homepage of my app, it would be blank. Here are some steps I took to deploy that solved the issue
+
+1. Create netlify.toml file add following script inside
 
 ```
 [build]
@@ -23,7 +22,7 @@ https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f
    Build command : CI= npm run build
    Publish directory: build/
 
-4. in package.json add script
+4. Add this script in package.json
 
 ```
   "homepage": "."

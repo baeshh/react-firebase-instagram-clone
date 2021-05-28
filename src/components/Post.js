@@ -4,7 +4,8 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Avatar, IconButton } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
-import { db } from '../firebase';
+import { AuthContext } from '../Firebase/context';
+// import { db } from '../Firebase/firebase';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -54,20 +55,22 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Post({ imgUrl, username, caption, id }) {
+  const { handleDelete } = useContext(AuthContext);
+
   console.log(username, caption, id);
   const classes = useStyles();
 
-  function handleDelete() {
-    db.collection('posts')
-      .doc(id)
-      .delete()
-      .then(() => {
-        console.log('Document successfully deleted!');
-      })
-      .catch((error) => {
-        console.error('Error removing document: ', error);
-      });
-  }
+  // function handleDelete() {
+  //   db.collection('posts')
+  //     .doc(id)
+  //     .delete()
+  //     .then(() => {
+  //       console.log('Document successfully deleted!');
+  //     })
+  //     .catch((error) => {
+  //       console.error('Error removing document: ', error);
+  //     });
+  // }
   return (
     <div className={classes.post}>
       <div className={classes.post_header}>
