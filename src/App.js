@@ -2,19 +2,19 @@
 
 import './styles.css';
 import React, { useContext } from 'react';
-import Post from './components/Post';
+import Post from './components/Post/Post';
 import { Typography } from '@material-ui/core';
-import Upload from './components/Upload';
-import Modal from './components/Modal';
-import {
-  AuthProvider,
-  AuthContext,
-} from './Firebase/context';
+import Upload from './components/Upload/Upload';
+import Modal from './components/Modal/Modal';
+import * as Auth from './Firebase/authContext';
+
+// import {
+//   AuthProvider,
+//   AuthContext,
+// } from './Firebase/context';
 
 export default function App() {
-  const { username, posts, signup } =
-    useContext(AuthContext);
-
+  const { username, posts, user } = Auth.useAuth();
   console.log('app posts', posts);
   console.log('app signup function', posts);
 
@@ -57,7 +57,7 @@ export default function App() {
   // }, [user, username]);
 
   return (
-    <AuthProvider>
+    <>
       <div className='App'>
         <div className='app_header'>
           <img
@@ -65,11 +65,11 @@ export default function App() {
             src='https://firebasestorage.googleapis.com/v0/b/instagram-clone-app-ebf8a.appspot.com/o/logo%2Finstalogo.png?alt=media&token=7f38c3b4-6a80-4088-8c27-87779ddd2bbb'
             alt='instagram logo'
           />
-          {username ? (
-            <div className='app_username'>
-              Hello 👋 {username}
-            </div>
-          ) : null}
+
+          <div className='app_username'>
+            Hello 👋 {user ? username : 'Guest'}
+          </div>
+
           <div className='app_login'>
             <Modal />
           </div>
@@ -103,6 +103,6 @@ export default function App() {
             ))}
         </div>
       </div>
-    </AuthProvider>
+    </>
   );
 }

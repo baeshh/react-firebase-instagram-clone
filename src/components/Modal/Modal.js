@@ -1,7 +1,6 @@
 /** @format */
 
 import React, { useState, useContext } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import {
   Modal,
   Button,
@@ -9,58 +8,11 @@ import {
   FormControl,
   InputLabel,
 } from '@material-ui/core';
-import { AuthContext } from '../Firebase/context';
-// import { auth } from '../Firebase/firebase';
-
-function getModalStyle() {
-  const top = 50;
-  const left = 50;
-
-  return {
-    top: `${top}%`,
-    left: `${left}%`,
-    transform: `translate(-${top}%, -${left}%)`,
-  };
-}
-
-const useStyles = makeStyles((theme) => ({
-  form: {
-    disaply: 'flex',
-    flexDirection: 'column',
-  },
-  paper: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    position: 'absolute',
-    width: 250,
-    backgroundColor: theme.palette.background.paper,
-    border: '2px solid #000',
-    boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
-  },
-  box: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-around',
-  },
-  button: {
-    marginBottom: 10,
-  },
-  logbutton: {
-    marginRight: 10,
-  },
-  img: {
-    maxWidth: 100,
-  },
-  login: {
-    dispaly: 'flex',
-  },
-}));
+import { AuthContext } from '../../Firebase/authContext';
+import { getModalStyle, useStyles } from './Styles';
 
 export default function SimpleModal() {
   const classes = useStyles();
-
   const [modalStyle] = useState(getModalStyle);
 
   //context
@@ -86,66 +38,7 @@ export default function SimpleModal() {
     setOpen(true);
   };
 
-  // const [username, setUserame] = useState('');
-  // const [email, setEmail] = useState('');
-  // const [password, setPassword] = useState('');
-  // const [user, setUser] = useState(null);
-
-  // useEffect(() => {
-  //   const unsubscribe = auth.onAuthStateChanged(
-  //     (authUser) => {
-  //       if (authUser) {
-  //         //user has loged in
-  //         console.log('user:', authUser);
-  //         setUser(authUser);
-  //       } else {
-  //         //user has loged out
-  //         setUser(null);
-  //       }
-  //     }
-  //   );
-
-  //   return () => {
-  //     //perform cleanup before refire useeffect
-  //     unsubscribe();
-  //   };
-  // }, [user, username]);
-
-  // const signup = (e) => {
-  //   auth
-  //     .createUserWithEmailAndPassword(email, password)
-  //     .then((authUser) => {
-  //       return authUser.user.updateProfile({
-  //         displayName: username,
-  //       });
-  //     })
-  //     .catch((error) => alert(error.message));
-  // };
-
-  // const signout = (e) => {
-  //   auth.signOut();
-  // };
-
-  // const signin = (e) => {
-  //   auth
-  //     .signInWithEmailAndPassword(email, password)
-  //     .catch((error) => alert(error.message));
-
-  //   setOpenSignin(false);
-  // };
-
-  // const demoSignin = (e) => {
-  //   auth
-  //     .signInWithEmailAndPassword(
-  //       'demosignup@gmail.com',
-  //       'abc123'
-  //     )
-  //     .catch((error) => alert(error.message));
-
-  //   setOpenSignin(false);
-  // };
-
-  const body = (
+  const signupbody = (
     <div style={modalStyle} className={classes.paper}>
       <img
         className={classes.img}
@@ -315,7 +208,7 @@ export default function SimpleModal() {
         aria-labelledby='simple-modal-title'
         aria-describedby='simple-modal-description'
       >
-        {body}
+        {signupbody}
       </Modal>
       <Modal
         open={openSignin}
@@ -328,3 +221,62 @@ export default function SimpleModal() {
     </div>
   );
 }
+
+// const [username, setUserame] = useState('');
+// const [email, setEmail] = useState('');
+// const [password, setPassword] = useState('');
+// const [user, setUser] = useState(null);
+
+// useEffect(() => {
+//   const unsubscribe = auth.onAuthStateChanged(
+//     (authUser) => {
+//       if (authUser) {
+//         //user has loged in
+//         console.log('user:', authUser);
+//         setUser(authUser);
+//       } else {
+//         //user has loged out
+//         setUser(null);
+//       }
+//     }
+//   );
+
+//   return () => {
+//     //perform cleanup before refire useeffect
+//     unsubscribe();
+//   };
+// }, [user, username]);
+
+// const signup = (e) => {
+//   auth
+//     .createUserWithEmailAndPassword(email, password)
+//     .then((authUser) => {
+//       return authUser.user.updateProfile({
+//         displayName: username,
+//       });
+//     })
+//     .catch((error) => alert(error.message));
+// };
+
+// const signout = (e) => {
+//   auth.signOut();
+// };
+
+// const signin = (e) => {
+//   auth
+//     .signInWithEmailAndPassword(email, password)
+//     .catch((error) => alert(error.message));
+
+//   setOpenSignin(false);
+// };
+
+// const demoSignin = (e) => {
+//   auth
+//     .signInWithEmailAndPassword(
+//       'demosignup@gmail.com',
+//       'abc123'
+//     )
+//     .catch((error) => alert(error.message));
+
+//   setOpenSignin(false);
+// };

@@ -5,6 +5,32 @@ https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f
 
 # CHALLANGES AND LEARNINGS OF THE PROJECT
 
+## Working with git
+
+Some commands that I used along the way , and learned some new ones
+
+Delete branch remotely
+
+```
+git push origin --delete `branch-name`
+```
+
+Create new branch and switch to it
+
+```
+git checkout -b `branch-name`
+```
+
+Push code to new branch
+
+```
+git push -u origin `branch-name`
+```
+
+## Context Provider
+
+https://javascript.plainenglish.io/introduction-to-react-context-api-with-firebase-authentication-92a6a3cf116d
+
 ## Deploying to Web
 
 ### Netlify

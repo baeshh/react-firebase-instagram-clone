@@ -1,14 +1,17 @@
 /** @format */
 
-import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 
 import App from './App';
+import { AuthProvider } from './Firebase/authContext';
+import { UploadProvider } from './Firebase/uploadContext';
 
 const rootElement = document.getElementById('root');
 ReactDOM.render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
+  <AuthProvider>
+    <UploadProvider>
+      <App />
+    </UploadProvider>
+  </AuthProvider>,
   rootElement
 );
