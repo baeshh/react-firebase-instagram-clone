@@ -6,8 +6,6 @@ import { Avatar, IconButton } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 import * as Auth from '../../Firebase/authContext';
 import { useStyles } from './Styles';
-import { useAuth } from '../../Firebase/authContext';
-// import { db } from '../Firebase/firebase';
 
 function Post({ imgUrl, username, caption, id }) {
   const classes = useStyles();
