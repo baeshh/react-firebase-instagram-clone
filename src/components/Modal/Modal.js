@@ -28,10 +28,12 @@ export default function SimpleModal() {
     signin,
     signout,
     user,
+    setOpenSignin,
+    openSignin,
   } = useContext(AuthContext);
 
   //signup functionality
-  const [openSignin, setOpenSignin] = useState(false);
+  // const [openSignin, setOpenSignin] = useState(false);
   const [open, setOpen] = useState(false);
   //modal open/close
   const handleOpen = () => {

@@ -9,6 +9,7 @@ import {
 } from '@material-ui/core';
 import { PhotoCamera } from '@material-ui/icons';
 import { useUpload } from '../../Firebase/uploadContext';
+
 import { useStyles } from './Styles';
 
 export default function Upload() {
@@ -24,14 +25,14 @@ export default function Upload() {
     setImage,
   } = useUpload();
 
-  const handleChange = (e) => {
+  const handleChange = async (e) => {
     if (e.target.files[0]) {
-      console.log('file:', e.target.files[0]);
-      setImage(...image, e.target.files[0]);
-      handlePreview(e.target.files[0]);
+      await handlePreview(e.target.files[0]);
+      await setImage(e.target.files[0]);
     }
   };
 
+  console.log('preview:', imagePreview);
   return (
     <>
       <div className={classes.root}>
@@ -91,77 +92,3 @@ export default function Upload() {
     </>
   );
 }
-
-// const [caption, setCaption] = useState('');
-// const [image, setImage] = useState('');
-// const [url, setUrl] = useState('');
-// const [progress, setProgress] = useState(0);
-// const [imagePreview, setImagePreview] = useState();
-
-// useEffect(() => {
-//   setImagePreview(imagePreview);
-// }, [imagePreview]);
-
-// function handlePreview(image) {
-//   storage.ref(`image_previews/${image.name}`).put(image);
-//   storage
-//     .ref('image_previews')
-//     .child(image.name)
-//     .getDownloadURL()
-//     .then((url) => setImagePreview(url));
-// }
-
-// const handleChange = (e) => {
-//   if (e.target.files[0]) {
-//     console.log('file:', e.target.files[0]);
-//     setImage(e.target.files[0]);
-//     handlePreview(e.target.files[0]);
-//   }
-// };
-
-// function handleUpload() {
-//   const uploadTask = storage
-//     .ref(`images/${image.name}`)
-//     .put(image);
-//   console.log('image:', image);
-//   console.log('image name:', image.name);
-//   uploadTask.on(
-//     'state_changed',
-//     (snapshot) => {
-//       //progress function
-//       const progress = Math.round(
-//         (snapshot.bytesTransferred /
-//           snapshot.totalBytes) *
-//           100
-//       );
-//       setProgress(progress);
-//     },
-//     (error) => {
-//       //error function
-//       console.log(error);
-//       alert(error.message);
-//     },
-//     () => {
-//       //complete function
-//       storage
-//         .ref('images')
-//         .child(image.name)
-//         .getDownloadURL()
-//         .then((url) => {
-//           //post image inside db
-//           console.log('url:' + url);
-//           db.collection('posts').add({
-//             timestamp:
-//               firebase.firestore.FieldValue.serverTimestamp(),
-//             caption: caption,
-//             imageUrl: url,
-//             username: username,
-//           });
-//         });
-//       setProgress(0);
-//       setCaption('');
-//       setImage(null);
-//       setImagePreview(null);
-//     }
-//   );
-// }

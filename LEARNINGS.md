@@ -5,6 +5,10 @@ https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f
 
 # CHALLANGES AND LEARNINGS OF THE PROJECT
 
+Uncaught (in promise) FirebaseError: AppCheck: AppCheck is being used before activate() is called for FirebaseApp [DEFAULT]. Please make sure you call activate() before instantiating other Firebase services. (appCheck/use-before-activation).
+
+Update App to latest version
+
 ## Working with git
 
 Some commands that I used along the way , and learned some new ones

@@ -13,8 +13,6 @@ function Post({ imgUrl, username, caption, id }) {
   const classes = useStyles();
   const { handleDelete } = Auth.useAuth();
 
-  console.log(username, caption, id);
-
   return (
     <div className={classes.post}>
       <div className={classes.post_header}>

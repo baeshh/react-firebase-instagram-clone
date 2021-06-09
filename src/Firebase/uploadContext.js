@@ -7,6 +7,7 @@ import React, {
 } from 'react';
 import { db, storage } from './firebase';
 import firebase from '@firebase/app';
+import { useAuth } from './authContext';
 
 //2.
 const UploadContext = React.createContext({});
@@ -17,16 +18,17 @@ function useUpload() {
 
 const UploadProvider = ({ children }) => {
   // Upload Component
+  const { username } = useAuth();
 
   const [caption, setCaption] = useState('');
   const [image, setImage] = useState('');
   const [progress, setProgress] = useState(0);
-  const [imagePreview, setImagePreview] = useState(null);
-//   const [url, setUrl] = useState('');
+  const [imagePreview, setImagePreview] = useState('');
+  //   const [url, setUrl] = useState('');
 
-  useEffect(() => {
-    setImagePreview(imagePreview);
-  }, [imagePreview]);
+  // useEffect(() => {
+  //   setImagePreview(imagePreview);
+  // }, [imagePreview]);
 
   function handlePreview(image) {
     storage.ref(`image_previews/${image.name}`).put(image);
@@ -37,20 +39,11 @@ const UploadProvider = ({ children }) => {
       .then((url) => setImagePreview(url));
   }
 
-  // const handleChange = (e) => {
-  //   if (e.target.files[0]) {
-  //     console.log('file:', e.target.files[0]);
-  //     setImage(e.target.files[0]);
-  //     handlePreview(e.target.files[0]);
-  //   }
-  // };
-
   function handleUpload() {
     const uploadTask = storage
       .ref(`images/${image.name}`)
       .put(image);
-    console.log('image:', image);
-    console.log('image name:', image.name);
+
     uploadTask.on(
       'state_changed',
       (snapshot) => {
@@ -87,7 +80,7 @@ const UploadProvider = ({ children }) => {
         setProgress(0);
         setCaption('');
         setImage(null);
-        setImagePreview(null);
+        setImagePreview('');
       }
     );
   }
