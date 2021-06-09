@@ -29,7 +29,7 @@ I am Liuba, a Front-End Developer working with React. I love to create awesome s
 
 <br>
 
-![landing page](https://github.com/liuba-larousse/react-hotelsearch-demo-json/blob/dynamic-pages/instaog1.png)
+![landing page](https://github.com/liuba-larousse/react-firebase-instagram-clone/blob/context-build/instaog1.png)
 
 <!-- <div align="center">
 <img src="https://res.cloudinary.com/liubalarousse/image/upload/v1623167167/for%20portfolio/hotelsearch-react-demo_nuoyne.png" width="75%" alt="landing page">
