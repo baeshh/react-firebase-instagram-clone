@@ -22,7 +22,7 @@ const UploadProvider = ({ children }) => {
   const [image, setImage] = useState('');
   const [progress, setProgress] = useState(0);
   const [imagePreview, setImagePreview] = useState(null);
-  const [url, setUrl] = useState('');
+//   const [url, setUrl] = useState('');
 
   useEffect(() => {
     setImagePreview(imagePreview);
