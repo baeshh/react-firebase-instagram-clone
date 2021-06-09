@@ -1,49 +1,135 @@
 <!-- @format -->
 
-# INSTAGRAM CLONE APP
+<!-- PROJECT LOGO -->
+<br />
 
-This is a small learning project exploring the integration of Firebase and React for creating a full-stack application
+# Hello! 👩🏻‍🦰 🤙🏻
 
-## Demo
+I am Liuba, a Front-End Developer working with React. I love to create awesome stuff with code.
 
-## Created with CodeSandbox
+---
 
-To view life here 👉 [Demo](instagram-clone-by-liuba.netlify.app)
+<p align="center">
+  <h2 align="center">Inatagram Clone React-Firebase App (Learning Project)</h2>
 
-To view code here 👉 [Sandbox](https://codesandbox.io/s/github/liuba-larousse/react-firebase-instagram-clone/tree/main)
+  <p align="center">
+<p align="center">
+    <a href="https://instagram-clone-by-liuba.netlify.app/">View Demo</a>
+    ·
+    <a href="">View Sandbox</a>
+    ·
+     <a href="https://github.com/liuba-larousse/react-firebase-instagram-clone/issues">Report Bug</a>
+</p>
+  </p>
+</p>
 
-## Learnings:
+<!-- ABOUT THE PROJECT -->
 
-✅ Authentication with Firebase
+## About The Project
 
-✅ Images upload and use with Firebase Storage
+<br>
 
-✅ Real-time database update with Firebase’s Firestore
+![landing page](https://github.com/liuba-larousse/react-hotelsearch-demo-json/blob/dynamic-pages/instaog1.png)
 
-## Installation and Usage
+<!-- <div align="center">
+<img src="https://res.cloudinary.com/liubalarousse/image/upload/v1623167167/for%20portfolio/hotelsearch-react-demo_nuoyne.png" width="75%" alt="landing page">
+</div> -->
 
-```bash
+This project was build with intention of learning and improving my understanding of React and Firebase. I used Material UI for styling of this project.
+
+It is a clone of an instagram app that we all use on daily basis for fun and inspiration. In this project user is able to login and add a post. Before posting an image user able to preview image and add caption. After uploading post will appear on the board with username, image and caption. User able to delete posted image.
+
+## Stack
+
+<!-- This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples. -->
+
+- 🧱 [React](https://reactjs.org/)
+- 🔥 [Firebase](https://firebase.google.com/)
+- 🎨 [Material UI](https://material-ui.com/)
+- 🚀 [Netlify](https://www.netlify.com/)
+
+<!-- GETTING STARTED -->
+
+## Getting Started
+
+<!-- This is an example of how you may give instructions on setting up your project locally.
+To get a local copy up and running follow these simple example steps. -->
+
+```
+#make sure you have npm installed
+npm install npm@latest -g
+
+#Clone the repo
+gh repo clone liuba-larousse/react-firebase-instagram-clone
+
+#Install NPM packages
 npm install
 
+#Start project
 npm start
 ```
 
-View locallly on
+<!-- USAGE EXAMPLES -->
 
-```bash
-http://localhost:3000
-```
+<!-- ## Usage -->
 
-## Resources
+<!-- Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources. -->
 
-[Video Tutorial](youtube.com/watch?v=f7T48W0cwXM&t=9393s)
+<!-- FEATURES-->
 
-[Firebase docs](https://firebase.google.com/docs)
+## Features
 
-[Material UI docs](https://material-ui.com/)
+- ✅ React
 
-## Contributing
+  - ⭐ useState
+  - ⭐ useEffect
+  - ⭐ Context
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+- ✅ Firebase
 
-Please make sure to update tests as appropriate.
+  - ⭐ User Authentication
+  - ⭐ Friestore Database (CRUD functionality)
+  - ⭐ Media Storgae (upload images)
+
+- ✅ Material UI
+  - ⭐ FormControl, Input, Modal, etc.
+  - ⭐ Icons
+  - ⭐ useStyles for styling
+
+<!-- LEARNINGS -->
+
+### Learnings
+
+💡 📖 See what I have [LEARNED](https://github.com/liuba-larousse/react-hotelsearch-demo-json/blob/dynamic-pages/LEARNINGS.md) building this project.
+
+<details><summary>Toggle to see learnings here</summary>
+
+Here are some things I learned while building this website:
+
+</details>
+
+## Contact
+
+I am actively looking for a Junior Front End Developer position. Contact me if you think I can be a great addition for your organization or you just want to talk code.
+
+<a href="mailto:liubovkapitulskaya@gmail.com?"><img src="https://img.shields.io/badge/gmail-%23DD0031.svg?&style=for-the-badge&logo=gmail&logoColor=white"/></a>
+
+<!-- ISSUES -->
+
+<!-- CONTRIBUTING -->
+
+<!-- ## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/NewFeature`)
+3. Commit your Changes (`git commit -m 'Add some NewFeature'`)
+4. Push to the Branch (`git push origin feature/NewFeature`)
+5. Open a Pull Request -->
+
+<!-- ACKNOWLEDGEMENTS -->
+
+## Acknowledgements
+
+- Project build with help of [Clever Programmer](https://www.youtube.com/channel/UCqrILQNl5Ed9Dz6CGMyvMTQt) tutorial
