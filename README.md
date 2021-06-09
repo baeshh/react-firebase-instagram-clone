@@ -16,7 +16,7 @@ I am Liuba, a Front-End Developer working with React. I love to create awesome s
 <p align="center">
     <a href="https://instagram-clone-by-liuba.netlify.app/">View Demo</a>
     ·
-    <a href="">View Sandbox</a>
+    <a href="https://codesandbox.io/s/ecstatic-night-odhpu">View Sandbox</a>
     ·
      <a href="https://github.com/liuba-larousse/react-firebase-instagram-clone/issues">Report Bug</a>
 </p>
@@ -35,9 +35,9 @@ I am Liuba, a Front-End Developer working with React. I love to create awesome s
 <img src="https://res.cloudinary.com/liubalarousse/image/upload/v1623167167/for%20portfolio/hotelsearch-react-demo_nuoyne.png" width="75%" alt="landing page">
 </div> -->
 
-This project was build with intention of learning and improving my understanding of React and Firebase. I used Material UI for styling of this project.
+This project was built with intention of learning and improving my understanding of React and Firebase. I used Material UI for the styling of this project.
 
-It is a clone of an instagram app that we all use on daily basis for fun and inspiration. In this project user is able to login and add a post. Before posting an image user able to preview image and add caption. After uploading post will appear on the board with username, image and caption. User able to delete posted image.
+It is a clone of an Instagram app that we all use on daily basis for fun and inspiration. In this project, the user can log in and add a post. Before posting an image user able to preview the image and add a caption. After uploading post will appear on the board with username, image, and caption. The user can delete posted image.
 
 ## Stack
 
@@ -88,8 +88,8 @@ npm start
 - ✅ Firebase
 
   - ⭐ User Authentication
-  - ⭐ Friestore Database (CRUD functionality)
-  - ⭐ Media Storgae (upload images)
+  - ⭐ Firestore Database (CRUD functionality)
+  - ⭐ Media Storage (upload images)
 
 - ✅ Material UI
   - ⭐ FormControl, Input, Modal, etc.
@@ -110,7 +110,7 @@ Here are some things I learned while building this website:
 
 ## Contact
 
-I am actively looking for a Junior Front End Developer position. Contact me if you think I can be a great addition for your organization or you just want to talk code.
+I am actively looking for a Junior Front End Developer position. Contact me if you think I can be a great addition to your organization or you just want to talk code.
 
 <a href="mailto:liubovkapitulskaya@gmail.com?"><img src="https://img.shields.io/badge/gmail-%23DD0031.svg?&style=for-the-badge&logo=gmail&logoColor=white"/></a>
 
