@@ -31,19 +31,14 @@ const UploadProvider = ({ children }) => {
   // }, [imagePreview]);
 
   function handlePreview(image) {
-    storage.ref(`image_previews/${image.name}`).put(image);
-    storage
-      .ref('image_previews')
-      .child(image.name)
-      .getDownloadURL()
-      .then((url) => setImagePreview(url));
+    setImagePreview(URL.createObjectURL(image));
+    setImage(image);
   }
 
   function handleUpload() {
     const uploadTask = storage
       .ref(`images/${image.name}`)
       .put(image);
-
     uploadTask.on(
       'state_changed',
       (snapshot) => {

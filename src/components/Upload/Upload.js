@@ -22,13 +22,11 @@ export default function Upload() {
     imagePreview,
     handlePreview,
     image,
-    setImage,
   } = useUpload();
 
-  const handleChange = async (e) => {
+  const handleChange = (e) => {
     if (e.target.files[0]) {
-      await handlePreview(e.target.files[0]);
-      await setImage(e.target.files[0]);
+      handlePreview(e.target.files[0]);
     }
   };
 

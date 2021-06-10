@@ -16,7 +16,7 @@ I am Liuba, a Front-End Developer working with React. I love to create awesome s
 <p align="center">
     <a href="https://instagram-clone-by-liuba.netlify.app/">View Demo</a>
     ·
-    <a href="https://codesandbox.io/s/ecstatic-night-odhpu">View Sandbox</a>
+    <a href="https://codesandbox.io/s/busy-babbage-klx57">View Sandbox</a>
     ·
      <a href="https://github.com/liuba-larousse/react-firebase-instagram-clone/issues">Report Bug</a>
 </p>
