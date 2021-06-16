@@ -45,6 +45,7 @@ const useStyles = makeStyles((theme) => ({
   },
   login: {
     dispaly: 'flex',
+    alignItems: 'center',
   },
 }));
 

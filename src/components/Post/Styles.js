@@ -27,6 +27,9 @@ const useStyles = makeStyles((theme) => ({
     border: '0.5px solid lightgrey',
     maxWidth: '500px',
     margin: '20px auto',
+    [theme.breakpoints.down('sm')]: {
+      maxWidth: '350px',
+    },
   },
 
   post_header: {
@@ -36,11 +39,14 @@ const useStyles = makeStyles((theme) => ({
   post_image: {
     width: '100%',
     maxWidth: '500px',
-    minWidth: '500px',
-    minHeight: '500px',
+    maxHeight: '500px',
     objectFit: 'contain',
     borderTop: '1px solid lightgrey',
     borderBottom: '1px solid lightgrey',
+    [theme.breakpoints.down('sm')]: {
+      maxWidth: '350px',
+      maxHeight: '350px',
+    },
   },
   buttom: {
     display: 'flex',

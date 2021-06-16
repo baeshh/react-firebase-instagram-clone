@@ -13,6 +13,9 @@ const useStyles = makeStyles((theme) => ({
     '& > *': {
       margin: theme.spacing(2),
     },
+    [theme.breakpoints.down('sm')]: {
+      maxWidth: '350px',
+    },
   },
   large: {
     width: theme.spacing(8),

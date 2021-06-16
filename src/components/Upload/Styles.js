@@ -5,12 +5,16 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
   root: {
     border: '0.5px solid lightgrey',
-
     padding: theme.spacing(3),
-    width: '450px',
+    maxWidth: '450px',
     display: 'flex',
     flexDirection: 'row',
     margin: '0 auto',
+    [theme.breakpoints.down('sm')]: {
+      width: '300px',
+      flexDirection: 'column',
+      alignItems: 'center',
+    },
   },
   uploadWrap: {
     flexDirection: 'column',
