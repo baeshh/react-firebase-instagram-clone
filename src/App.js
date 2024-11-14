@@ -22,7 +22,7 @@ export default function App() {
             alt='instagram logo'
           />
 
-          <div className='app_username'>
+<div className='app_username'>
             Hello 👋 {user ? username : 'Guest'}
           </div>
 
@@ -32,21 +32,7 @@ export default function App() {
         </div>
         <div className='app_body'>
           <Users />
-          {username ? (
-            <Upload />
-          ) : (
-            <div className='app_loginRequest'>
-              <Typography
-                color='primary'
-                variant='h6'
-                component='p'
-                align='center'
-                gutterBottom
-              >
-                Please to log in to post a photo
-              </Typography>
-            </div>
-          )}
+          {username && <Upload />}  {/* 메시지 제거 후 업로드 컴포넌트만 조건부 렌더링 */}
 
           {posts &&
             posts.map((each) => (
